@@ -1,11 +1,10 @@
 FLAGS = -O3 -std=c99
-CFILES = bf.c
 PROGDIR = progs
 
 all : bf
 
-bf : $(CFILES)
-	gcc $(FLAGS) -o bf $(CFILES)
+bf : bf.c
+	gcc $(FLAGS) -o bf bf.c
 
 run : bf
 	./bf $(PROGDIR)/hello.b
@@ -13,6 +12,9 @@ run : bf
 %.b : bf
 	./bf $(PROGDIR)/$@
 
+bftoc : bftoc.c
+	gcc $(FLAGS) -o bftoc bftoc.c
+
 clean :
-	rm -rf *.o bf
+	rm -rf *.o bf bftoc
 

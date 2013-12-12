@@ -32,6 +32,8 @@ int main(int argc, char** argv) {
 		}
 	}
 
+	fclose(fp);
+
 	program = (char *) realloc(program, fi * sizeof(char));
 	size = fi;
 
@@ -89,6 +91,9 @@ int main(int argc, char** argv) {
 		}
 		ip++;
 	}
+
+	free(program);
+	free(data);
 
 	return 0;
 }
